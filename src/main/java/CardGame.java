@@ -5,7 +5,7 @@ public class CardGame {
     private final String[] suits = {"\u2665", "\u2666", "\u2663", "\u2660"}; // ♥ ♦ ♣ ♠
     private final String[] symbols = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"};
 
-    private ArrayList<Card> deckOfCards = new ArrayList<>();
+    private final ArrayList<Card> deckOfCards = new ArrayList<>();
 
     public void createDeck() {
         for (String suit: suits){
