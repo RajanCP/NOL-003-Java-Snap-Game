@@ -1,7 +1,7 @@
-public record Card(String symbol, String suit, int value) {
+public record Card(Rank rank, Suit suit) {
 
     @Override
-    public String toString() { // Runs Card.toString when you call card (since it expects an object)
-        return suit + symbol;
+    public String toString() {
+        return rank.getSymbol() + suit.getSymbol();
     }
 }
