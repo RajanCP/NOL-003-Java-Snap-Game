@@ -27,8 +27,14 @@ public class CardGame {
         }
     }
 
-    public ArrayList<Card> sortDeckIntoSuits() {
+    public ArrayList<Card> sortDeckinNumberOrder() {
         deckOfCards.sort(Comparator.comparingInt(card -> card.rank().getValue()));
+        return deckOfCards;
+    }
+
+    public ArrayList<Card> sortDeckIntoSuits() {
+        deckOfCards.sort(Comparator.comparing(card -> card.suit())
+                .comparingInt(card -> card.rank().getValue()));
         return deckOfCards;
     }
 }
