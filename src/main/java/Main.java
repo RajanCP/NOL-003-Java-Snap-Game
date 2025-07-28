@@ -15,6 +15,9 @@ public class Main {
         Card dealt4 = game.dealCard();
         System.out.println("Dealt card: " + dealt3);
         System.out.println("Dealt card: " + dealt4);
+        game.sortDeckIntoSuits();
+        System.out.println(game.getDeck());
+
 
     }
 }

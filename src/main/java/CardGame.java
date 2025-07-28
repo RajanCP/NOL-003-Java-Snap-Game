@@ -33,8 +33,9 @@ public class CardGame {
     }
 
     public ArrayList<Card> sortDeckIntoSuits() {
-        deckOfCards.sort(Comparator.comparing(card -> card.suit())
-                .comparingInt(card -> card.rank().getValue()));
+        deckOfCards.sort(
+                Comparator.comparing(Card::suit).thenComparingInt((Card card) -> card.rank().getValue())
+        );
         return deckOfCards;
     }
 }
