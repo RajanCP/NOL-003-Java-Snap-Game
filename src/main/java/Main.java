@@ -5,6 +5,10 @@ public class Main {
         CardGame game = new CardGame();
         game.createDeck();
         System.out.println(game.getDeck());
+        Card dealt = game.dealCard();
+        System.out.println("Dealt card: " + dealt);
+        Card dealt2 = game.dealCard();
+        System.out.println("Dealt card: " + dealt2);
 
     }
 }

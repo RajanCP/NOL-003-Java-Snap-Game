@@ -16,4 +16,18 @@ public class CardGame {
     public ArrayList<Card> getDeck() {
         return deckOfCards;
     }
+
+
+    public Card dealCard() {
+        if (!deckOfCards.isEmpty()) {
+            return deckOfCards.remove(0);
+        } else {
+            return null;
+        }
+    }
+
+
+
+
+
 }
