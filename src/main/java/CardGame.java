@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 
@@ -20,6 +19,10 @@ public class CardGame {
         return deckOfCards;
     }
 
+    public CardGame() {
+        createDeck();
+        shuffleDeck();
+    }
 
     public Card dealCard() {
         if (!deckOfCards.isEmpty()) {
@@ -29,7 +32,7 @@ public class CardGame {
         }
     }
 
-    public ArrayList<Card> sortDeckinNumberOrder() {
+    public ArrayList<Card> sortDeckInNumberOrder() {
         deckOfCards.sort(Comparator.comparingInt(card -> card.rank().getValue()));
         return deckOfCards;
     }
