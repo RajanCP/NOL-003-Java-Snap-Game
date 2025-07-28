@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Comparator;
 
 public class CardGame {
@@ -38,4 +40,10 @@ public class CardGame {
         );
         return deckOfCards;
     }
+
+    public ArrayList<Card> shuffleDeck() {
+        Collections.shuffle(deckOfCards);
+        return deckOfCards;
+    }
+
 }
