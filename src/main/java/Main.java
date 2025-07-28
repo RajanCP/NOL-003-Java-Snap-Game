@@ -9,6 +9,12 @@ public class Main {
         System.out.println("Dealt card: " + dealt);
         Card dealt2 = game.dealCard();
         System.out.println("Dealt card: " + dealt2);
+        game.sortDeckIntoSuits();
+        System.out.println(game.getDeck());
+        Card dealt3 = game.dealCard();
+        Card dealt4 = game.dealCard();
+        System.out.println("Dealt card: " + dealt3);
+        System.out.println("Dealt card: " + dealt4);
 
     }
 }

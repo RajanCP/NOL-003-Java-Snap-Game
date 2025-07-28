@@ -4,4 +4,6 @@ public record Card(Rank rank, Suit suit) {
     public String toString() {
         return rank.getSymbol() + suit.getSymbol();
     }
+
+
 }
