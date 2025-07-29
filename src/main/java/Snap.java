@@ -39,6 +39,8 @@ public class Snap extends CardGame {
                 System.out.println("Type 'snap' within 2 seconds to win!");
                 System.out.print(">> ");
 
+                // Timer logic
+
                 long startTime = System.currentTimeMillis();
                 String input = scanner.nextLine();
                 if ((System.currentTimeMillis() - startTime) <= 2000 && input.equalsIgnoreCase("snap")) {
@@ -62,4 +64,30 @@ public class Snap extends CardGame {
 
         System.out.println("No more cards. Game over.");
     }
+
+
+    public void startGameLoop() {
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            play();
+
+            System.out.print("\nWould you like to play again? (yes/no): ");
+            String response = scanner.nextLine();
+            if (!response.equals("yes") && !response.equals("y")) {
+                System.out.println("Thanks for playing Snap!");
+                break;
+            }
+
+            resetGame(); // reset the deck for a new game
+        }
+    }
+
+    private void resetGame() {
+        getDeck().clear();     // clear old deck
+        createDeck();          // create new deck
+        shuffleDeck();         // reshuffle
+    }
+
+
 }
