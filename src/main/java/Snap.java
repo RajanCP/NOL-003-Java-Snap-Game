@@ -30,17 +30,22 @@ public class Snap extends CardGame {
             System.out.println(currentPlayer.getName() + " drew: " + currentCard);
 
             if (previousCard != null && currentCard.rank() == previousCard.rank()) {
-                System.out.println("SNAP! " + currentPlayer.getName() + " wins!");
-                return;
+                System.out.println("SNAP Opportunity! Type 'snap' within 2 seconds to WIN!");
+
+                long startTime = System.currentTimeMillis();
+                String input = scanner.nextLine();
+                if ((System.currentTimeMillis() - startTime) <= 2000 && input.equalsIgnoreCase("snap")) {
+                    System.out.println("");
+                } else if (System.currentTimeMillis() - startTime > 2000) {
+                    System.out.println("Too slow!");
+                } else {
+                    System.out.println("Wrong input.");
+                }
             }
 
             previousCard = currentCard;
 
-            if (isPlayerOneTurn) {
-                isPlayerOneTurn = false;
-            } else {
-                isPlayerOneTurn = true;
-            }
+            isPlayerOneTurn = !isPlayerOneTurn;
         }
 
         System.out.println("No more cards. Game over.");
