@@ -15,22 +15,32 @@ public class Snap extends CardGame {
     public void play() {
         Scanner scanner = new Scanner(System.in);
         Card previousCard = null;
+        boolean isPlayerOneTurn = true;
 
-        System.out.println("Welcome to Snap! Press Enter to draw cards. Match ranks to win!");
+        System.out.println("Welcome to Snap!");
+        System.out.println(player1.getName() + " VS " + player2.getName());
+        System.out.println("Press Enter to draw cards. Match ranks to win!");
 
         while (!getDeck().isEmpty()) {
-            System.out.print("Press Enter to deal a card...");
+            Player currentPlayer = isPlayerOneTurn ? player1 : player2;
+            System.out.print(currentPlayer.getName() + " Press Enter to deal a card...");
             scanner.nextLine(); // waits for Enter
 
             Card currentCard = dealCard();
-            System.out.println("You drew: " + currentCard);
+            System.out.println(currentPlayer.getName() + " drew: " + currentCard);
 
             if (previousCard != null && currentCard.rank() == previousCard.rank()) {
-                System.out.println("SNAP! You win!");
+                System.out.println("SNAP! " + currentPlayer.getName() + " wins!");
                 return;
             }
 
             previousCard = currentCard;
+
+            if (isPlayerOneTurn) {
+                isPlayerOneTurn = false;
+            } else {
+                isPlayerOneTurn = true;
+            }
         }
 
         System.out.println("No more cards. Game over.");
