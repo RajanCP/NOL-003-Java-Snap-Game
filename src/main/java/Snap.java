@@ -2,8 +2,14 @@ import java.util.Scanner;
 
 public class Snap extends CardGame {
 
-    public Snap() {
+    private final Player player1;
+    private final Player player2;
+
+    public Snap(String player1name, String player2name) {
         super(); // Creates a new shuffled deck
+        this.player1 = new Player(player1name);
+        this.player2 = new Player(player2name);
+
     }
 
     public void play() {
