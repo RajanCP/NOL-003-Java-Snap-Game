@@ -17,7 +17,6 @@ public class Snap extends CardGame {
         Card previousCard = null;
         boolean isPlayerOneTurn = true;
 
-        System.out.println("Welcome to Snap!");
         System.out.println(player1.getName() + " VS " + player2.getName());
         System.out.println("Press Enter to draw cards. Match ranks to win!");
 
